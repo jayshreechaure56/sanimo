@@ -1,0 +1,14 @@
+Interview Questions asked for Capgemini 2025 June:Java:
+1.Difference between final and finally
+2.What is static?
+3.Write java code to count for number of occurances "aabbbcccd"
+4.Write java code to reverse words "I Love my country" to "country my love I"
+5.Extract numbers from given string and add it "pu87ne" output should be 15
+6.Differences between string,stringBuffer,StringBuilder
+Selenium:
+1.Explain your framework2.Explain oops concepts used in your framework
+3.Types of locators
+4.Types of xpath
+5.Where have you used javascript in your framework
+6.Types of Exceptions  
+
