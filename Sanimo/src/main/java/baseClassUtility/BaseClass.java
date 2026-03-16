@@ -18,6 +18,7 @@ import org.testng.annotations.BeforeTest;
 
 import genericUtility.PropertyFileUtility;
 import genericUtility.WebDriverUtility;
+import objectRepo.HomePage;
 
 public class BaseClass {
 
@@ -62,16 +63,16 @@ public class BaseClass {
 	public void configBm() throws IOException {
 		String UNAME = putil.toReadDataFromProperties("Username");
 		String PWD = putil.toReadDataFromProperties("Password");
-		//LoginPage lp = new LoginPage(driver);
-		//lp.toLoginToNinzaCRM(UNAME, PWD);
+		HomePage lp = new HomePage(driver);
+		lp.toLoginToSanimo(UNAME, PWD);
 		Reporter.log("login successful", true);
 	}
 
 	@AfterMethod(groups = {"SmokeTestCase","RegressionTestCase"})
 	public void configAM() throws InterruptedException {
 		// logout
-		//HomePage hp = new HomePage(driver);
-	//	hp.logOutOfNinzaCRM();
+		HomePage hp = new HomePage(driver);
+		hp.toLogOutToSanimo();
 		Thread.sleep(3000);
 		driver.quit();
 	}

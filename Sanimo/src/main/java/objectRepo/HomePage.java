@@ -5,11 +5,11 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-public class LoginPage {
+public class HomePage {
 
 	WebDriver driver;
 
-	public LoginPage(WebDriver driver) {
+	public HomePage(WebDriver driver) {
 		this.driver = driver;
 		PageFactory.initElements(driver, this);
 	}
@@ -20,7 +20,7 @@ public class LoginPage {
 	@FindBy(id = "password")
 	private WebElement passwordTF;
 
-	@FindBy(xpath = "//button[@type='submit'])")
+	@FindBy(xpath = "//button[text()='Submit']")
 	private WebElement signinButton;
 
 	@FindBy(xpath = "//span[text()='Sanimo Polymers']")
@@ -31,6 +31,10 @@ public class LoginPage {
 
 	public WebDriver getDriver() {
 		return driver;
+	}
+
+	public WebElement getLogout() {
+		return logout;
 	}
 
 	public WebElement getUsernameTF() {
@@ -52,12 +56,22 @@ public class LoginPage {
 	public WebElement getSanimoTesting() {
 		return sanimoTesting;
 	}
+	
+	@FindBy(xpath = "(//*[name()='svg' and @stroke=\"currentColor\" ])[14]")
+    private WebElement logout;
 
 	// Business logic/ library
-	public void toLoginToNinzaCRM(String Uname, String pswd) {
+	public void toLoginToSanimo(String Uname, String pswd) {
 		usernameTF.sendKeys(Uname);
 		passwordTF.sendKeys(pswd);
-		signinButton.click();
+		getSigninButton().click();
 	}
+	
+	public void toLogOutToSanimo() {
+		getLogout().click();
+	}
+	
+	
+	
 
 }

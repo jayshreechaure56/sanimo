@@ -3,12 +3,21 @@ package Sanimo.Sanimo;
 import java.time.Duration;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.interactions.Actions;
 
 public class SanimoLogin {
 
+	/**
+	 * @param args
+	 * @throws InterruptedException
+	 */
+	/**
+	 * @param args
+	 * @throws InterruptedException
+	 */
 	public static void main(String[] args) throws InterruptedException {
 		// TODO Auto-generated method stub
 		ChromeDriver driver = new ChromeDriver();
@@ -26,8 +35,10 @@ public class SanimoLogin {
 		driver.findElement(By.xpath("//button[text()='Add']")).click();
 
 		
-		driver.findElement(By.xpath("//div[@class=\"border border-secondary css-7b1t0c-control\"]")).click();
-		driver.findElement(By.xpath("//div[text()='PARTY SELF VEHICLE']")).click();
+		driver.findElement(By.xpath("//div[@class='border border-secondary css-7b1t0c-control']")).click();
+		driver.findElement(By.xpath("//input[@id=\"react-select-3-input\"]")).click();
+	
+		driver.findElement(By.xpath("//div[text()='Transport1']")).click();
 
 		driver.findElement(By.xpath("//div[@class=\" css-19bb58m\"]/input[@id=\"react-select-4-input\"]")).click();
 		driver.findElement(By.xpath("//div[text()='test']")).click();
