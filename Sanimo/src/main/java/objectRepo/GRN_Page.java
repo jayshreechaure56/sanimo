@@ -14,99 +14,117 @@ public class GRN_Page {
 	public GRN_Page(WebDriver driver) {
 		this.driver = driver;
 		PageFactory.initElements(driver, this);
-	
+
 	}
-	
-	//*[name()='svg' and @data-icon="menu-fold"]
+
+	// *[name()='svg' and @data-icon="menu-fold"]
 	@FindBy(xpath = "//*[name()='svg' and @data-icon=\"menu-fold\"]")
 	private WebElement menu_fold;
 
 	@FindBy(xpath = "//span[text()='Raw Material v2']")
 	private WebElement rawMaterial;
-	
+
 	@FindBy(xpath = "//span[text()='GRN']")
 	private WebElement Grnbtn;
-	
+
 	@FindBy(xpath = "//button[text()='Add']")
 	private WebElement AddGRN;
-	
+
 	@FindBy(xpath = "//div[text()='Select...']")
 	private WebElement transport;
-	
-	public WebElement values(String value) {
-        return driver.findElement(
-            
-            By.xpath("//div[text()= '"+value+"']")
 
-        );    
+	public WebElement values(String value) {
+		return driver.findElement(
+
+				By.xpath("//div[text()= '" + value + "']")
+
+		);
 	}
-	
+
 	@FindBy(xpath = "//input[@id='react-select-4-input']")
 	private WebElement supplierName;
-	
+
 	@FindBy(xpath = "//input[@id='react-select-6-input']")
 	private WebElement lot;
-	
+
 	@FindBy(xpath = "//input[@id='react-select-5-input']")
 	private WebElement returnable;
-	
+
 	@FindBy(xpath = "//input[@id='react-select-8-input']")
 	private WebElement process;
-	
-	@FindBy(xpath = "//input[@id='react-select-9-input']]")
+
+	@FindBy(xpath = "//input[@id='react-select-9-input']")
 	private WebElement shade;
-		
+
+	@FindBy(xpath = "(//div[@class=' css-1xc3v61-indicatorContainer'])[14]")
+	private WebElement shadeCross;
+
+	public WebElement getShadeCross() {
+		return shadeCross;
+	}
+
 	public WebElement getShade() {
 		return shade;
 	}
 
-
-	@FindBy(xpath = "//input[@id='react-select-10-input']")
+	@FindBy(xpath = "//div[@class=' css-19bb58m']/input[@id='react-select-10-input']")
 	private WebElement UOM;
-	
+
 	@FindBy(xpath = "//input[@id='react-select-11-input']")
 	private WebElement typeOfPacking;
 
 	@FindBy(xpath = "//input[@id='react-select-12-input']")
 	private WebElement grade;
-	
+
 	@FindBy(xpath = "//input[@id='react-select-13-input']")
 	private WebElement qlty;
-	
-	
+
+	@FindBy(xpath = "//input[@id='react-select-15-input']")
+	private WebElement godown;
+
+	public WebElement getGodown() {
+		return godown;
+	}
+
 	@FindBy(xpath = "//input[@id='react-select-14-input']")
 	private WebElement package1;
 	
+	@FindBy(xpath = "//button[text()='Confirm']")
+	private WebElement confirm;
+
+	public WebElement getConfirm() {
+		return confirm;
+	}
+
 	@FindBy(xpath = "//input[@placeholder='Rate']")
 	private WebElement rate;
-	
 	@FindBy(xpath = "//input[@name='total_cartons']")
 	private WebElement cartons;
-	
+
 	@FindBy(xpath = "//input[@name='total_cheese']")
 	private WebElement cheese;
-	
+
 	@FindBy(xpath = "//input[@name='total_net_weight']")
 	private WebElement totalNetwt;
-	
+
 	@FindBy(xpath = "//button[text()='Add Shade Entry']")
 	private WebElement addShade;
-	
+
 	@FindBy(xpath = "//input[@name=\"shade_entry[0].no_of_cartons\"]")
 	private WebElement NoOfCartons;
-	
+
 	@FindBy(xpath = "//input[@name='shade_entry[0].no_of_cheese']")
 	private WebElement NoOfCheese;
-	
+
 	@FindBy(xpath = "//input[@name='shade_entry[0].gross_weight']")
 	private WebElement grosswt;
-	
+
 	@FindBy(xpath = "//input[@name='shade_entry[0].tare_weight']")
 	private WebElement tarewt;
-	
+
 	@FindBy(xpath = "//input[@name='shade_entry[0].net_weight']")
 	private WebElement netwt;
-	
+
 	@FindBy(xpath = "//button[@type='submit']")
 	private WebElement grnSubmit;
 
@@ -213,11 +231,5 @@ public class GRN_Page {
 	public WebElement getGrnSubmit() {
 		return grnSubmit;
 	}
-	
-	
-
-	
-	
-	
 
 }

@@ -3,11 +3,14 @@ package Sanimo.Sanimo;
 import java.io.IOException;
 
 import org.apache.poi.EncryptedDocumentException;
+import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
 import org.testng.annotations.Test;
 
 import baseClassUtility.BaseClass;
 import genericUtility.ExcelFileUtility;
 import genericUtility.JavaUtility;
+import genericUtility.WebDriverUtility;
 import objectRepo.GRN_Page;
 import objectRepo.HomePage;
 
@@ -17,6 +20,7 @@ public class GRN extends BaseClass {
 	public void createGrnTest() throws EncryptedDocumentException, IOException {
 
 		JavaUtility jutil = new JavaUtility();
+		WebDriverUtility wutil = new WebDriverUtility();
 		ExcelFileUtility eutil = new ExcelFileUtility();
 		GRN_Page gp = new GRN_Page(driver);
 		HomePage hp = new HomePage(driver);
@@ -51,9 +55,59 @@ public class GRN extends BaseClass {
 
 		gp.getSupplierName().click();
 		gp.values(supplier_name).click();
-		/*
-		 * gp.getReturnable().sendKeys(returnable); gp.getLot().sendKeys(lot_no);
-		 */
+
+		gp.getReturnable().click();
+		gp.values(returnable).click();
+
+		gp.getLot().click();
+		gp.values(lot_no).click();
+
+		gp.getProcess().click();
+		gp.values(process).click();
+
+		gp.getPackage1().click();
+		gp.values(package1).click();
+
+		gp.getUOM().click();
+		gp.values(uom).click();
+
+		gp.getTypeOfPacking().click();
+		gp.values(typepackage).click();
+
+		gp.getGodown().click();
+		gp.getGodown().sendKeys(godown);
+		gp.getGodown().click();
+
+		gp.getGrade().click();
+		gp.values(grade).click();
+
+		gp.getQlty().click();
+		gp.values(qlty).click();
+
+		// gp.getShadeCross().click();
+		gp.getShade().sendKeys(shade_no);
+		gp.getShade().click();
+
+		gp.getRate().sendKeys(rate);
+		gp.getCartons().sendKeys(carton);
+		gp.getCheese().sendKeys(cheese);
+		gp.getTotalNetwt().sendKeys(netwt);
+		gp.getAddShade().click();
+		gp.getNoOfCartons().sendKeys(carton);
+		gp.getNoOfCheese().sendKeys(cheese);
+		gp.getNetwt().sendKeys(netwt);
+		gp.getGrosswt().sendKeys(gross);
+		gp.getTarewt().sendKeys(tare);
+
+		gp.getShade().clear();
+		gp.getShade().click();
+		gp.getShade().sendKeys(shade_no);
+		gp.values(shade_no).click();
+
+		wutil.toScrollWindow(driver, gp.getGrnSubmit());
+		gp.getGrnSubmit().click();
+		gp.getConfirm().click();
+
 	}
 
 }

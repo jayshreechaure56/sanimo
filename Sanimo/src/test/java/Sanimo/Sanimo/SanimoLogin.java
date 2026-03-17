@@ -3,7 +3,7 @@ package Sanimo.Sanimo;
 import java.time.Duration;
 
 import org.openqa.selenium.By;
-import org.openqa.selenium.Keys;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.interactions.Actions;
@@ -40,9 +40,9 @@ public class SanimoLogin {
 	
 		driver.findElement(By.xpath("//div[text()='Transport1']")).click();
 
-		driver.findElement(By.xpath("//div[@class=\" css-19bb58m\"]/input[@id=\"react-select-4-input\"]")).click();
+		driver.findElement(By.xpath("//input[@id='react-select-4-input']")).click();
 		driver.findElement(By.xpath("//div[text()='test']")).click();
-		driver.findElement(By.xpath("//div[@class=\" css-19bb58m\"]/input[@id=\"react-select-5-input\"]")).click();
+		driver.findElement(By.xpath("//input[@id=\"react-select-5-input\"]")).click();
 		driver.findElement(By.xpath("//div[text()='Non-Returnable']")).click();
 
 		driver.findElement(By.xpath("//div[@class=\" css-19bb58m\"]/input[@id=\"react-select-6-input\"]")).click();
@@ -53,7 +53,7 @@ public class SanimoLogin {
 		driver.findElement(By.xpath("//div[@class=\" css-19bb58m\"]/input[@id=\"react-select-8-input\"]")).click();
 		driver.findElement(By.xpath("//div[text()='Dyeing']")).click();
 
-		driver.findElement(By.xpath("//div[@class=\" css-19bb58m\"]/input[@id=\"react-select-10-input\"]")).click();
+		driver.findElement(By.xpath("//div[@class=' css-19bb58m']/input[@id='react-select-10-input']")).click();
 		driver.findElement(By.xpath("//div[text()='Kgs']")).click();
 
 		driver.findElement(By.xpath("//div[@class=\" css-19bb58m\"]/input[@id=\"react-select-11-input\"]")).click();
@@ -64,7 +64,11 @@ public class SanimoLogin {
 
 		driver.findElement(By.xpath("//div[@class=\" css-19bb58m\"]/input[@id=\"react-select-13-input\"]")).click();
 		driver.findElement(By.xpath("//div[text()='Yarn Qlty']")).click();
-
+		driver.findElement(By.xpath("(//div[@class=' css-1xc3v61-indicatorContainer'])[14]")).click();
+		driver.findElement(By.xpath("//input[@id='react-select-9-input']")).click();
+		driver.findElement(By.xpath("//input[@id='react-select-9-input']")).sendKeys("blue");
+		
+		driver.findElement(By.xpath("//div[text()='blue']")).click();
 		driver.findElement(By.xpath("//div[@class=\" css-19bb58m\"]/input[@id=\"react-select-14-input\"]")).click();
 		driver.findElement(By.xpath("//div[text()='1.400 KG - STD']")).click();
 
