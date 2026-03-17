@@ -13,7 +13,7 @@ public class ExcelFileUtility {
 
 	//Read data from excel
 	public String toReadDataFromExcel(String sheetName, int row, int cell) throws EncryptedDocumentException, IOException {
-		FileInputStream fis= new FileInputStream("./configAppData/TestScript.xlsx");
+		FileInputStream fis= new FileInputStream("./configAppData/SanimoSheet.xlsx");
 		Workbook wb = WorkbookFactory.create(fis);
 		String data = wb.getSheet(sheetName).getRow(row).getCell(cell).getStringCellValue();
 		wb.close();
