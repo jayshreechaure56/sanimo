@@ -27,7 +27,7 @@ public class GRN extends BaseClass {
 
 		hp.getSanimoPolymers().click();
 		hp.getSanimoTesting().click();
-		gp.getRawMaterial().click();
+		hp.getRawMaterial().click();
 		gp.getGrnbtn().click();
 		gp.getAddGRN().click();
 

@@ -17,7 +17,6 @@ public class GRN_Page {
 
 	}
 
-	// *[name()='svg' and @data-icon="menu-fold"]
 	@FindBy(xpath = "//*[name()='svg' and @data-icon=\"menu-fold\"]")
 	private WebElement menu_fold;
 
@@ -134,10 +133,6 @@ public class GRN_Page {
 
 	public WebElement getMenu_fold() {
 		return menu_fold;
-	}
-
-	public WebElement getRawMaterial() {
-		return rawMaterial;
 	}
 
 	public WebElement getGrnbtn() {

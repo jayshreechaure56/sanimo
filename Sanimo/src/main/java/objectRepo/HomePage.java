@@ -28,6 +28,28 @@ public class HomePage {
 
 	@FindBy(xpath = "//span[text()='Sanimo Testing']")
 	private WebElement sanimoTesting;
+	
+	@FindBy(xpath = "//span[text()='Raw Material v2']")
+	private WebElement rawMaterial;
+	
+	@FindBy(xpath = "//span[text()='Dyeing']")
+	private WebElement dyeing;
+	
+	public WebElement getDyeing() {
+		return dyeing;
+	}
+
+
+	@FindBy(xpath = "//span[text()='Sale Order']")
+	private WebElement salesOrder;
+
+	public WebElement getSalesOrder() {
+		return salesOrder;
+	}
+
+	public WebElement getRawMaterial() {
+		return rawMaterial;
+	}
 
 	public WebDriver getDriver() {
 		return driver;
